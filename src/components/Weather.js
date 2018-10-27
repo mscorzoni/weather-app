@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Weather extends Component {
-  render() {
-    let template = (
-      <div>
-        <p>Location: {this.props.city}, {this.props.country}</p>
-        <p>Temperature: {this.props.temperature}</p>
-        <p>Humidity:{this.props.humidity}</p>
-        <p>Conditions: {this.props.description}</p>
-      </div>
-    );
-    if(this.props.city === undefined) {
-      template = (
-        <p>{this.props.error}
-        </p>
-      );
-    }
-    return (
-      <div> 
-        {template}
-      </div>
+const weather = (props) => {
+  let template = (
+    <div>
+      <p>Location: {props.city}, {props.country}</p>
+      <p>Temperature: {props.temperature}</p>
+      <p>Humidity:{props.humidity}</p>
+      <p>Conditions: {props.description}</p>
+    </div>
+  );
+  if (props.city === undefined) {
+    template = (
+      <p>{props.error}
+      </p>
     );
   }
+  return (
+    <div>
+      {template}
+    </div>
+  );
 }
 
-export default Weather;
+export default weather;
