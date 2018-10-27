@@ -11,7 +11,10 @@ class Weather extends Component {
       </div>
     );
     if(this.props.city === undefined) {
-      template = null;
+      template = (
+        <p>{this.props.error}
+        </p>
+      );
     }
     return (
       <div> 
